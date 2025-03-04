@@ -6,6 +6,7 @@ export class BalancesPage {
         this.page = page;
     }
 
+//   Locators
     private balancesTab = this.page.locator('//a[@aria-label="Balances"]');
     private balancesHeader = this.page.locator('//h1[text()="Balances"]');
     private balanceSummary = this.page.locator('//span[text()="Balance summary"]');
