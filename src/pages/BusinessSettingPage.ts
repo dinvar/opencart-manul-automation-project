@@ -5,6 +5,7 @@ export class BusinessSettingPage {
         this.page = page;
     }
 
+    //   Locators
     private businessSettingHeader = this.page.locator('//h1[@id="secondary-nav-title"]');
     private bankaccountandcurrency = this.page.locator('//span[text()="Bank accounts and currencies"]');
     private toggleminimumbalance = this.page.locator('//label[text()="Keep a minimum amount in your payments balance"]');
