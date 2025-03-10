@@ -1,0 +1,9 @@
+{
+    "amount": "$300",
+    "description": "Electricity Bill",
+    "statementDescriptor": "MSEBBillPayment",
+    "cardNumber": "4242424242424242",
+    "expiryDate": "12/26",
+    "cvcNumber": "123",
+    "postalCode": "12342"
+}

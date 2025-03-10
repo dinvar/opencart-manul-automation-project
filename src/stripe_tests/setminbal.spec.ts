@@ -2,6 +2,7 @@ import { test, expect, Browser, Page, Locator, BrowserContext } from '@playwrigh
 import { firefox, chromium, webkit } from 'playwright'
 import { BalancesPage } from '../pages/BalancesPage';
 import { BusinessSettingPage } from '../pages/BusinessSettingPage';
+import { sourceMapsEnabled } from 'process';
 
 test('Balances', async() =>{
     const browser: Browser = await chromium.connectOverCDP('http://localhost:9222');
@@ -19,9 +20,10 @@ test('Balances', async() =>{
    const businessSettingPage : BusinessSettingPage = new BusinessSettingPage(page);
    businessSettingPage.clickbankaccountandcurrency();
 
-   businessSettingPage.verifybusinessSettingHeader();
+   const isBussinessSettingsHeaderVisible = businessSettingPage.isBussinessSettingsHeaderVisible();
+   await expect(isBussinessSettingsHeaderVisible).toBeTruthy();
    businessSettingPage.enabletoggleminimumbalance();
-    businessSettingPage.fillminimumamount();  
-    businessSettingPage.clicksavebutton();
+   businessSettingPage.fillminimumamount();  
+   businessSettingPage.clicksavebutton();
 
 });

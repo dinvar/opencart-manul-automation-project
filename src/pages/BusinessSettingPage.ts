@@ -13,6 +13,10 @@ export class BusinessSettingPage {
     private savebutton = this.page.locator('//button[text()="Save"]');
     
 
+    async isBussinessSettingsHeaderVisible() : Promise<boolean> {
+        return await this.businessSettingHeader.isVisible();
+    }
+
     async verifybusinessSettingHeader() {
         await expect(this.businessSettingHeader).toBeVisible();
     }
@@ -24,6 +28,7 @@ export class BusinessSettingPage {
     async enabletoggleminimumbalance() {
         await this.toggleminimumbalance.isEnabled();
     }
+
 
     async fillminimumamount() {
         await this.filladdminimumamount.fill('100');
