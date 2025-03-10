@@ -19,4 +19,5 @@ export class Sample {
      }
      return studentdetails;
     }
+    
 }
