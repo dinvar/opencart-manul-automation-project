@@ -1,0 +1,7 @@
+{
+"amount": "100.00",
+"description": "Test Product",
+"minimumEstimatedShippingDays": "3",
+"maximumEstimatedShippingDays": "5"
+
+}

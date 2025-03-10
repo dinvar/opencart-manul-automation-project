@@ -1,8 +1,8 @@
 import {expect,Page} from '@playwright/test';
 
 export class HomePage{
-    constructor(private page:Page){
-        this.page = page;
+    constructor(private page:Page){  
+        this.page = page;   
     }
 
     private homeHeader = this.page.locator('//span[text()="Home"]');

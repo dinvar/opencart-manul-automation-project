@@ -7,18 +7,44 @@ export class ProductCataloguePage {
     }
 
     private productCatalogueTab = this.page.locator('//span[text()="Product catalogue"]');
-    private allProductsTab = this.page.locator('//span[text()="All products"]');
-    private addYourFirstTestProductMsg = this.page.locator('//span[text()="Add your first test product"]');
+    private shippingRatesTab = this.page.locator('//a[@data-collection-id="products.shippingRates"]');
+    private createShippingRatesTab = this.page.locator('//span[text()="Create shipping rate"]');
+    private setAmount = this.page.locator('//input[@name="ShippingRateCurrencyOptions-base"]');
+    private descriptionDetails = this.page.locator('//input[@id="rateDisplayName"]');
+    private minimumEstimatedShippingDaysDetails = this.page.locator('//input[@id="deliveryEstimate[minimumValue]"]');
+    private maximumEstimatedShippingDays = this.page.locator('//input[@placeholder="max"]');
+    private saveButton = this.page.locator('//span[contains(text(),"Save")]');
 
     async clickOnProductCatalogueTab() {
         await this.productCatalogueTab.click();
     }
 
-    async clickOnAllProductsTab() {
-        await this.allProductsTab.click();
+    async clickOnShippingRatesTab() {
+        await this.shippingRatesTab.click();
     }
 
-    async verifyAddYourFirstTestProductMessageDisplayed() {
-        await expect(this.addYourFirstTestProductMsg).toBeVisible();
+    async clickOnCreateShippingRatesTab() {
+        await this.createShippingRatesTab.click();
+  
+    }
+
+    async fillAmount(amount: string) {
+        await this.setAmount.fill(amount);
+    }
+
+    async fillDescription(description: string) {
+        await this.descriptionDetails.fill(description);
+    }
+
+    async fillMinimumEstimatedShippingDays(minimumEstimatedShippingDays: string) {
+        await this.minimumEstimatedShippingDaysDetails.fill(minimumEstimatedShippingDays);
+    }
+
+    async fillMaximumEstimatedShippingDays(maximumEstimatedShippingDays: string) {
+        await this.maximumEstimatedShippingDays.fill(maximumEstimatedShippingDays);
+    }
+
+    async clickSaveButton() {
+        await this.saveButton.click();
     }
 }

@@ -2,13 +2,16 @@ import { test, expect, Browser, Page, Locator, BrowserContext } from '@playwrigh
 import { firefox, chromium, webkit } from 'playwright'
 import { TransactionPage } from '../pages/transactionPage';
 import { HomePage } from '../pages/HomePage';
+import testData from '../testdata/CreatePayment.json';
 
 test('Transaction', async() =>{
     //chrome --remote-debugging-port=9222 --user-data-dir="C:\chrome-session"
-
+    //const variableName : ClassName = new ClassName();
     const browser: Browser = await chromium.connectOverCDP('http://localhost:9222');
     const context = browser.contexts()[0];
     const page = context.pages()[0];
+
+    const environment = 'Prod';
   
     await page.bringToFront();
 
@@ -16,16 +19,15 @@ test('Transaction', async() =>{
     await homePage.clickCreateButton();
     await homePage.clickPaymentButton();
     const transactionPage : TransactionPage = new TransactionPage(page);
-    // await transactionPage.clickOneTime(); 
-    // await page.waitForTimeout(90000);
+
     await transactionPage.clickAmount();
-    await transactionPage.fillAmount();
-    await transactionPage.fillDescription();
-    await transactionPage.fillStatementDiscriptor();
-    await transactionPage.fillcardNumber();
-    await transactionPage.fillExpiryDate();
-    await transactionPage.fillCVCNumber();
-    await transactionPage.fillPostalCode();
+    await transactionPage.fillAmount(testData.amount);
+    await transactionPage.fillDescription(testData.description);
+    await transactionPage.fillStatementDiscriptor(testData.statementDescriptor);
+    await transactionPage.fillcardNumber(testData.cardNumber);
+    await transactionPage.fillExpiryDate(testData.expiryDate);
+    await transactionPage.fillCVCNumber(testData.cvcNumber);
+    await transactionPage.fillPostalCode(testData.postalCode);
     await transactionPage.clickSubmitPayment();
 });
     

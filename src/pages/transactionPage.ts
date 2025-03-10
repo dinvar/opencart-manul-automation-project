@@ -2,7 +2,8 @@ import {expect, Page} from '@playwright/test';
 
 export class TransactionPage {
     
-    constructor(private page: Page) {
+    private page!: Page;
+    constructor(page: Page) { //page - passed from test
         this.page = page;
     }
 
@@ -18,7 +19,8 @@ export class TransactionPage {
     private SubmitPaymentButton = this.page.locator('//span[text()="Submit payment"]/ancestor::button');
     private SecurePaymentIframe = this.page.locator('//iframe[@title="Secure card payment input frame"]');
 
-    async clickOneTime() {
+    async clickOneTime(variableName: string) {
+        console.log(variableName);
         await this.OneTimeHeader.click();
     }
 
@@ -27,35 +29,35 @@ export class TransactionPage {
     }
 
 
-    async fillAmount() {
-         await this.AmountDetails.fill('$100.00');
+    async fillAmount(amount: string) {
+        await this.AmountDetails.fill(amount);
     }
 
-    async fillDescription() {
-        await this.DescriptionDetails.fill('Electricity bill');
+    async fillDescription(description : string) {
+        await this.DescriptionDetails.fill(description);
     }
 
-    async fillStatementDiscriptor() {
-        await this.StatementDiscriptorDetails.fill('MSCBbill');
+    async fillStatementDiscriptor(statementDescriptor : string) {
+        await this.StatementDiscriptorDetails.fill(statementDescriptor);
     }
 
-    async fillcardNumber() {
-         await this.CardNumberDetails.fill('4242424242424242');
+    async fillcardNumber(cardnumber : string) {
+         await this.CardNumberDetails.fill(cardnumber);
     }
 
-    async fillExpiryDate() {
+    async fillExpiryDate(expiryDate : string) {
         await this.ExpiryDateDetails.click();
-        await this.ExpiryDateDetails.fill('12/26');
+        await this.ExpiryDateDetails.fill(expiryDate);
     }
 
-    async fillCVCNumber() {
+    async fillCVCNumber(cvc : string) {
         await this.CVCNumberDetails.click();
-        await this.CVCNumberDetails.fill('123');
+        await this.CVCNumberDetails.fill(cvc);
     }
 
-    async fillPostalCode() {
+    async fillPostalCode(postalCode : string) {
         await this.PostalCodeDetails.click();
-        await this.PostalCodeDetails.fill('12345');
+        await this.PostalCodeDetails.fill(postalCode);
     }
     async clickSubmitPayment() {
         await this.SubmitPaymentButton.click();
