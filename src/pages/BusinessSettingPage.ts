@@ -1,7 +1,7 @@
 import { expect, Page } from "@playwright/test";
 export class BusinessSettingPage {
     
-    constructor(private page: Page) {
+    constructor(public page: Page) {
         this.page = page;
     }
 

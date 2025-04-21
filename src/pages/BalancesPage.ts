@@ -2,16 +2,16 @@ import { expect, Page } from "@playwright/test";
 
 export class BalancesPage {
     
-    constructor(private page: Page) {
+    constructor(public page: Page) {
         this.page = page;
     }
 
 //   Locators
-    private balancesTab = this.page.locator('//a[@aria-label="Balances"]');
-    private balancesHeader = this.page.locator('//h1[text()="Balances"]');
-    private balanceSummary = this.page.locator('//span[text()="Balance summary"]');
-    private fundsOnHold = this.page.locator('//span[text()="Funds on hold"]');
-    private setyourminbal = this.page.locator('//a[@aria-label="Set your minimum balance"]');
+    public balancesTab = this.page.locator('//a[@aria-label="Balances"]');
+    public balancesHeader = this.page.locator('//h1[text()="Balances"]');
+    public balanceSummary = this.page.locator('//div[@id="automatic-summary"]/h3');
+    public fundsOnHold = this.page.locator('//div[@class="Box-root Box-hideIfEmpty"]/span');
+    public setyourminbal = this.page.locator('//a[@aria-label="Set your minimum balance"]');
 
     async clickBalancesTab() {
         await this.balancesTab.click();

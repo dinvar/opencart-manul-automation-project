@@ -9,7 +9,7 @@ test('Balances', async() =>{
     const page = context.pages()[0];
     
     await page.bringToFront();
-    // await page.waitForTimeout(50000);
+    //await page.waitForTimeout(50000);
 
     const balancePage : BalancesPage = new BalancesPage(page);
     balancePage.clickBalancesTab();

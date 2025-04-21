@@ -16,18 +16,22 @@ test('Transaction', async() =>{
     await page.bringToFront();
 
     const homePage : HomePage = new HomePage(page);
-    await homePage.clickCreateButton();
-    await homePage.clickPaymentButton();
-    const transactionPage : TransactionPage = new TransactionPage(page);
+    //await homePage.clickCreateButton();
+    //await homePage.clickPaymentButton();
+    
+    //const transactionPage : TransactionPage = new TransactionPage(page);
+    // await transactionPage.clickAmount();
+    // await transactionPage.fillAmount(testData.amount);
+    // await transactionPage.fillDescription(testData.description);
+    // await transactionPage.fillStatementDiscriptor(testData.statementDescriptor);
+    // await transactionPage.fillcardNumber(testData.cardNumber);
+    // await transactionPage.fillExpiryDate(testData.expiryDate);
+    // await transactionPage.fillCVCNumber(testData.cvcNumber);
+    // await transactionPage.fillPostalCode(testData.postalCode);
+    // await transactionPage.clickSubmitPayment();
 
-    await transactionPage.clickAmount();
-    await transactionPage.fillAmount(testData.amount);
-    await transactionPage.fillDescription(testData.description);
-    await transactionPage.fillStatementDiscriptor(testData.statementDescriptor);
-    await transactionPage.fillcardNumber(testData.cardNumber);
-    await transactionPage.fillExpiryDate(testData.expiryDate);
-    await transactionPage.fillCVCNumber(testData.cvcNumber);
-    await transactionPage.fillPostalCode(testData.postalCode);
-    await transactionPage.clickSubmitPayment();
+    await homePage.clickOnHomeTab();
+    await homePage.selectMenu('Invoices');  
+    //await homePage.clickPaymentButton();
 });
     

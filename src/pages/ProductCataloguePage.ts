@@ -6,9 +6,9 @@ export class ProductCataloguePage {
         this.page = page;
     }
 
-    private productCatalogueTab = this.page.locator('//span[text()="Product catalogue"]');
+    private productCatalogueTab = this.page.locator('//a[@data-testid="primary-nav-item-link-products"]');
     private shippingRatesTab = this.page.locator('//a[@data-collection-id="products.shippingRates"]');
-    private createShippingRatesTab = this.page.locator('//span[text()="Create shipping rate"]');
+    private createShippingRatesTab = this.page.locator('//button[@data-db-analytics-name="list_views.header.new"]');
     private setAmount = this.page.locator('//input[@name="ShippingRateCurrencyOptions-base"]');
     private descriptionDetails = this.page.locator('//input[@id="rateDisplayName"]');
     private minimumEstimatedShippingDaysDetails = this.page.locator('//input[@id="deliveryEstimate[minimumValue]"]');
