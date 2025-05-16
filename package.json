@@ -8,9 +8,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.52.0",
     "@types/node": "^22.13.10",
-    "typescript": "^5.7.2"
+    "playwright": "^1.52.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "csv-parser": "^3.2.0",
