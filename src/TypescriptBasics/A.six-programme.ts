@@ -72,4 +72,38 @@ var reversed = 0;
  }
  console.log(reversed);
   
- 
+//6 larest & smallest nmber
+function FindMaxMin(nums: number[]) {
+	let largest = nums[0];
+	let smallest = nums[0];
+
+	for (let n of nums) {
+	if (n > largest) largest = n;
+	if(n < smallest) smallest = n;
+}
+ 	console.log("Largest:", largest);
+	console.log("Smallest:", smallest);
+}
+FindMaxMin([12,45,98,76,34,3]); 
+
+//string count 7
+//way 1
+var str: string = "Typescript"
+console.log(str.length);
+
+//way 2
+function StringCount(str: string) {
+  return str.length
+}
+console.log(StringCount("playwright"));
+
+// prime number
+function isPrime(n: number): boolean {
+  if (n <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(5));
