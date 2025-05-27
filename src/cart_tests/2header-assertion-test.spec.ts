@@ -4,7 +4,7 @@ import {test, expect, Browser, chromium, Page } from '@playwright/test';
 test('assertion of header', async() => {
     const browser: Browser = await chromium.launch({headless: false, channel: 'chrome'});
     const page: Page = await browser.newPage();
-    await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=common/Home');
+    await page.goto('https://www.opencart.com/index.php?route=cms/demo');
 
     
     

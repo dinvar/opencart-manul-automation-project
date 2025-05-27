@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { CreateProductPage } from "../pages/create-product-page";
 import fs from "fs";
-import { parse } from "csv-parse/sync"; // better to use sync parser
+import { parse } from "csv-parse/sync"; 
 
-// Synchronous CSV parser helper (simpler)
+
 function readCSVFileSync(filePath: string): any[] {
     const fileContent = fs.readFileSync(filePath, { encoding: "utf-8" });
     return parse(fileContent, {
